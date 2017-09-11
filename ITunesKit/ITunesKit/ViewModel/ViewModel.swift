@@ -9,6 +9,15 @@
 import UIKit
 
 class ViewModel: NSObject {
+    func fetchChartList(completion: ()-> ()) {
+        var chartClient: ChartClient!
+        var chart: [NSDictionary]?
+        
+        chartClient.fetchChart { chart in
+            self.chart
+        }
+    }
+    
     func numberOfItemInSection(section: Int) -> Int {
         return 10
     }
