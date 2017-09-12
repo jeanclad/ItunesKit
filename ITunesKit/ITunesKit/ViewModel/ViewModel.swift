@@ -9,20 +9,21 @@
 import UIKit
 
 class ViewModel: NSObject {
-    @IBOutlet var chartClient: ChartClient!
-    var chart: [NSDictionary]?
+    @IBOutlet internal var chartClient: ChartClient!
+    fileprivate var chart: [NSDictionary]?
     
-    func fetchChartList(completion: @escaping ()-> ()) {
+    internal func fetchChartList(completion: @escaping () -> Void) {
         chartClient.fetchChart { chart in
             self.chart = chart
             completion()
         }
     }
     
-    func numberOfItemInSection(section: Int) -> Int {
+    internal func numberOfItemInSection(section: Int) -> Int {
         return chart?.count ?? 0
     }
-    func titleForItemAtIndexPath(indexPath: NSIndexPath) -> String {
+    
+    internal func titleForItemAtIndexPath(indexPath: NSIndexPath) -> String {
         return chart?[indexPath.row].value(forKeyPath: "im:name.label") as? String ?? ""
     }
 }

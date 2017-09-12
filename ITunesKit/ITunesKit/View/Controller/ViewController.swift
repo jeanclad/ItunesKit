@@ -8,17 +8,15 @@
 
 import UIKit
 
-// TODO: 메쏘드 속성 붙이기
 class ViewController: UIViewController, UITableViewDataSource {
     
-    @IBOutlet var viewModel: ViewModel!
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet fileprivate var viewModel: ViewModel!
+    @IBOutlet fileprivate var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        
+                
         self.viewModel.fetchChartList {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -39,8 +37,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         return cell
     }
     
-    func configureCell(cell: UITableViewCell, forRowIndexPath indexPath: NSIndexPath) {
+    fileprivate func configureCell(cell: UITableViewCell, forRowIndexPath indexPath: NSIndexPath) {
         cell.textLabel?.text = viewModel.titleForItemAtIndexPath(indexPath: indexPath)
     }
 }
-

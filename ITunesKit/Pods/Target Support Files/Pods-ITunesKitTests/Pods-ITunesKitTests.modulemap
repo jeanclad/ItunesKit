@@ -1,0 +1,6 @@
+framework module Pods_ITunesKitTests {
+  umbrella header "Pods-ITunesKitTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
