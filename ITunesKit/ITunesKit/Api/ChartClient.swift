@@ -9,11 +9,12 @@
 import UIKit
 
 class ChartClient: NSObject {
-    func fetchChart (completion: @escaping ([NSDictionary]?) -> Void) {
+    internal func fetchChart (completion: @escaping ([NSDictionary]?) -> Void) {
         // fetch the data
         let urlString = "https://itunes.apple.com/kr/rss/topfreeapplications/limit=50/genre=6015/json"
         guard let url = URL(string: urlString) else {
             print("URL is nil")
+            completion(nil)
             return
         }
         
