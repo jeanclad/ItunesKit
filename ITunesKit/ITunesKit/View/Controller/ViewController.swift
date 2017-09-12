@@ -10,17 +10,20 @@ import UIKit
 
 // TODO: 메쏘드 속성 붙이기
 class ViewController: UIViewController, UITableViewDataSource {
-
+    
     @IBOutlet var viewModel: ViewModel!
+    @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        
+        self.viewModel.fetchChartList {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     // MARK: UITableViewDataSource

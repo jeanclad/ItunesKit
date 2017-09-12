@@ -59,11 +59,17 @@
                     </view>
                     <navigationItem key="navigationItem" title="Appstore (금융)" id="oiA-Dg-cvT"/>
                     <connections>
+                        <outlet property="tableView" destination="tNW-mF-22l" id="yH5-no-cz7"/>
                         <outlet property="viewModel" destination="gPa-aQ-dBC" id="8Ot-CY-CNr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aso-w9-q3n" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="gPa-aQ-dBC" customClass="ViewModel" customModule="ITunesKit" customModuleProvider="target"/>
+                <customObject id="gPa-aQ-dBC" customClass="ViewModel" customModule="ITunesKit" customModuleProvider="target">
+                    <connections>
+                        <outlet property="chartClient" destination="HDg-py-ctP" id="4Ck-pc-sdq"/>
+                    </connections>
+                </customObject>
+                <customObject id="HDg-py-ctP" customClass="ChartClient" customModule="ITunesKit" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="916" y="857.72113943028489"/>
         </scene>
