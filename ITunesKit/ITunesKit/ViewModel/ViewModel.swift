@@ -11,16 +11,15 @@ import UIKit
 class ViewModel: NSObject {
     @IBOutlet internal var chartClient: ChartClient!
     fileprivate var chart: [NSDictionary]?
+    internal var numberOfItemInSection: Int {
+        return chart?.count ?? 0
+    }
     
     internal func fetchChartList(completion: @escaping () -> Void) {
         chartClient.fetchChart { chart in
             self.chart = chart
             completion()
         }
-    }
-    
-    internal func numberOfItemInSection(section: Int) -> Int {
-        return chart?.count ?? 0
     }
     
     internal func titleForItemAtIndexPath(indexPath: NSIndexPath) -> String {
