@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet fileprivate var viewModel: ViewModel!
     @IBOutlet fileprivate var tableView: UITableView!
@@ -32,12 +32,20 @@ class ViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as UITableViewCell
         
-        configureCell(cell: cell, forRowIndexPath: indexPath as NSIndexPath)
+        configureCell(cell: cell, forRowIndexPath: indexPath)
         
         return cell
     }
     
-    fileprivate func configureCell(cell: UITableViewCell, forRowIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let controller = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
+            let id = viewModel.idForItemAtIndexPath(indexPath: indexPath)
+            navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+    
+    fileprivate func configureCell(cell: UITableViewCell, forRowIndexPath indexPath: IndexPath) {
         cell.textLabel?.text = viewModel.titleForItemAtIndexPath(indexPath: indexPath)
     }
 }

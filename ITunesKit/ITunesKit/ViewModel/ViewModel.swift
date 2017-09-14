@@ -22,7 +22,11 @@ class ViewModel: NSObject {
         }
     }
     
-    internal func titleForItemAtIndexPath(indexPath: NSIndexPath) -> String {
+    internal func titleForItemAtIndexPath(indexPath: IndexPath) -> String {
         return chart?[indexPath.row].value(forKeyPath: "im:name.label") as? String ?? ""
+    }
+    
+    internal func idForItemAtIndexPath(indexPath: IndexPath) -> String {
+        return chart?[indexPath.row].value(forKeyPath: "id.attributes.im:id") as? String ?? ""
     }
 }

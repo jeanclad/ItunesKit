@@ -73,6 +73,24 @@
             </objects>
             <point key="canvasLocation" x="916" y="857.72113943028489"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="2Xe-SO-Vci">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="NGM-kV-9ks" customClass="DetailViewController" customModule="ITunesKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dbq-X6-12W"/>
+                        <viewControllerLayoutGuide type="bottom" id="J75-F7-bOT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BVx-uT-6zC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G9m-dI-vL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1964" y="858"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="aqb-Hz-87q">
             <objects>
