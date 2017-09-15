@@ -7,26 +7,32 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ChartViewModel: NSObject {
-    @IBOutlet internal var httptClient: HttpClient!
-    fileprivate var chart: [NSDictionary]?
-    internal var numberOfItem: Int {
-        return chart?.count ?? 0
-    }
+    var chartModel: ChartModel?
     
-    internal func fetchChartList(completion: @escaping () -> Void) {
-        httptClient.fetchChart { chart in
-            self.chart = chart
-            completion()
-        }
-    }
     
-    internal func titleForItemAtIndexPath(indexPath: IndexPath) -> String {
-        return chart?[indexPath.row].value(forKeyPath: "im:name.label") as? String ?? ""
-    }
-    
-    internal func idForItemAtIndexPath(indexPath: IndexPath) -> String {
-        return chart?[indexPath.row].value(forKeyPath: "id.attributes.im:id") as? String ?? ""
-    }    
+//    @IBOutlet internal var httptClient: HttpClient!
+//    fileprivate var chart: [NSDictionary]?
+//    internal var numberOfItem: Int {
+//        return chart?.count ?? 0
+//    }
+//    
+//    internal func fetchChartList(completion: @escaping () -> Void) {
+////        httptClient.fetchChart { chart in
+////            self.chart = chart
+////            completion()
+////        }
+//        httptClient.fecthHttpResponse(url: "https://itunes.apple.com/kr/rss/topfreeapplications/limit=50/genre=6015/json")
+//    }
+//    
+//    internal func titleForItemAtIndexPath(indexPath: IndexPath) -> String {
+//        return chart?[indexPath.row].value(forKeyPath: "im:name.label") as? String ?? ""
+//    }
+//    
+//    internal func idForItemAtIndexPath(indexPath: IndexPath) -> String {
+//        return chart?[indexPath.row].value(forKeyPath: "id.attributes.im:id") as? String ?? ""
+//    }    
 }

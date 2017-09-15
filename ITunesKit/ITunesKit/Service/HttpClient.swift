@@ -7,8 +7,44 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class HttpClient: NSObject {
+    fileprivate let bag = DisposeBag()
+    
+    func fecthHttpResponse(url: String) {
+        
+        //        let response =
+        Observable.from(optional: url)
+            .map { (urlString) -> URL in
+                return URL(string: urlString)!
+            }.flatMap { (url) -> Observable<(HTTPURLResponse, Data)> in
+                return URLSession.shared.rx.response(request: URLRequest(url: url))
+            }.shareReplay(1)
+            //                .response
+            .filter { response, _ in
+                return 200..<300 ~= response.statusCode
+            }
+            .map { _, data -> NSDictionary in
+                guard let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []),
+                    let result = jsonObject as? NSDictionary else {
+                        return [:]
+                }
+                return result
+            }
+            .filter { objects in
+                return objects.count > 0
+            }
+//            .map { objects in
+//                return objects.flatMap(Event.init)
+//            }
+            .subscribe(onNext: { [weak self] newEvents in
+                print("aa")
+            })
+            .addDisposableTo(bag)
+    }
+    
     internal func fetchChart (completion: @escaping ([NSDictionary]?) -> Void) {
         // fetch the data
         let urlString = "https://itunes.apple.com/kr/rss/topfreeapplications/limit=50/genre=6015/json"
@@ -39,7 +75,7 @@ class HttpClient: NSObject {
             }
             
             completion(nil)
-            return            
+            return
         }
         task.resume()
         

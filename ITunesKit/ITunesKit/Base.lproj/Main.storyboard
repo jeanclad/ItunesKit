@@ -43,10 +43,6 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="IRA-nF-neM" id="Wrs-Ne-nld"/>
-                                    <outlet property="delegate" destination="IRA-nF-neM" id="KIV-a7-Rn3"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -59,17 +55,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Appstore (금융)" id="oiA-Dg-cvT"/>
                     <connections>
-                        <outlet property="chartViewModel" destination="gPa-aQ-dBC" id="QbY-AR-dBI"/>
                         <outlet property="tableView" destination="tNW-mF-22l" id="yH5-no-cz7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aso-w9-q3n" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="gPa-aQ-dBC" customClass="ChartViewModel" customModule="ITunesKit" customModuleProvider="target">
-                    <connections>
-                        <outlet property="httptClient" destination="HDg-py-ctP" id="Z3b-1e-mP3"/>
-                    </connections>
-                </customObject>
-                <customObject id="HDg-py-ctP" customClass="HttpClient" customModule="ITunesKit" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="916" y="857.72113943028489"/>
         </scene>
