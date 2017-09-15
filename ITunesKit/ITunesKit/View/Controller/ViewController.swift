@@ -10,14 +10,14 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet fileprivate var viewModel: ViewModel!
+    @IBOutlet fileprivate var chartViewModel: ChartViewModel!
     @IBOutlet fileprivate var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
                 
-        self.viewModel.fetchChartList {
+        self.chartViewModel.fetchChartList {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -26,7 +26,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // MARK: UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfItemInSection
+        return chartViewModel.numberOfItemInSection
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -40,12 +40,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
-            let id = viewModel.idForItemAtIndexPath(indexPath: indexPath)
+            let id = chartViewModel.idForItemAtIndexPath(indexPath: indexPath)
+            let appIdModel = AppIdModel(appId: id)
             navigationController?.pushViewController(controller, animated: true)
         }
     }
     
     fileprivate func configureCell(cell: UITableViewCell, forRowIndexPath indexPath: IndexPath) {
-        cell.textLabel?.text = viewModel.titleForItemAtIndexPath(indexPath: indexPath)
+        cell.textLabel?.text = chartViewModel.titleForItemAtIndexPath(indexPath: indexPath)
     }
 }

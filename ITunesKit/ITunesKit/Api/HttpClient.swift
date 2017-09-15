@@ -1,5 +1,5 @@
 //
-//  ChartClient.swift
+//  HttptClient.swift
 //  ITunesKit
 //
 //  Created by jeanclad on 2017. 9. 11..
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChartClient: NSObject {
+class HttpClient: NSObject {
     internal func fetchChart (completion: @escaping ([NSDictionary]?) -> Void) {
         // fetch the data
         let urlString = "https://itunes.apple.com/kr/rss/topfreeapplications/limit=50/genre=6015/json"
