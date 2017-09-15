@@ -9,14 +9,14 @@
 import UIKit
 
 class ChartViewModel: NSObject {
-    @IBOutlet internal var chartClient: HttpClient!
+    @IBOutlet internal var httptClient: HttpClient!
     fileprivate var chart: [NSDictionary]?
-    internal var numberOfItemInSection: Int {
+    internal var numberOfItem: Int {
         return chart?.count ?? 0
     }
     
     internal func fetchChartList(completion: @escaping () -> Void) {
-        chartClient.fetchChart { chart in
+        httptClient.fetchChart { chart in
             self.chart = chart
             completion()
         }
@@ -28,5 +28,5 @@ class ChartViewModel: NSObject {
     
     internal func idForItemAtIndexPath(indexPath: IndexPath) -> String {
         return chart?[indexPath.row].value(forKeyPath: "id.attributes.im:id") as? String ?? ""
-    }
+    }    
 }

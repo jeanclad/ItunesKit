@@ -10,11 +10,15 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet fileprivate var detailViewModel: DetailViewModel!
+    @IBOutlet internal var detailViewModel: DetailViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = self.detailViewModel.appName
+        self.detailViewModel.fetchAppInfo {
+            // TODO: 상세화면 구현
+        }
         // Do any additional setup after loading the view.
     }
 

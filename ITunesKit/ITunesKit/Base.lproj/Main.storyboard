@@ -59,14 +59,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Appstore (금융)" id="oiA-Dg-cvT"/>
                     <connections>
+                        <outlet property="chartViewModel" destination="gPa-aQ-dBC" id="QbY-AR-dBI"/>
                         <outlet property="tableView" destination="tNW-mF-22l" id="yH5-no-cz7"/>
-                        <outlet property="viewModel" destination="gPa-aQ-dBC" id="V03-SL-9H6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aso-w9-q3n" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="gPa-aQ-dBC" customClass="ChartViewModel" customModule="ITunesKit" customModuleProvider="target">
                     <connections>
-                        <outlet property="chartClient" destination="HDg-py-ctP" id="ZRQ-jr-xkT"/>
+                        <outlet property="httptClient" destination="HDg-py-ctP" id="Z3b-1e-mP3"/>
                     </connections>
                 </customObject>
                 <customObject id="HDg-py-ctP" customClass="HttpClient" customModule="ITunesKit" customModuleProvider="target"/>
@@ -93,7 +93,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G9m-dI-vL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="Kcc-QG-ixn" customClass="DetailViewModel" customModule="ITunesKit" customModuleProvider="target">
                     <connections>
-                        <outlet property="chartClient" destination="xeR-Q6-4ZF" id="JSm-uN-Ekd"/>
+                        <outlet property="httptClient" destination="xeR-Q6-4ZF" id="DZM-wb-snJ"/>
                     </connections>
                 </customObject>
                 <customObject id="xeR-Q6-4ZF" customClass="HttpClient" customModule="ITunesKit" customModuleProvider="target"/>

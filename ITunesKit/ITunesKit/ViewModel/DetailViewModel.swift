@@ -9,7 +9,17 @@
 import UIKit
 
 internal class DetailViewModel: NSObject {
-    @IBOutlet fileprivate var chartClient: HttpClient!
-    fileprivate var appInfo: [NSDictionary]?
-    fileprivate var appId: String?
+    @IBOutlet var httptClient: HttpClient!
+    var appInfo: NSArray?
+    
+    var appName: String?
+    var appId: String?
+    
+    internal func fetchAppInfo(completion: @escaping () -> Void) {
+        // TODO: Unit Test appId를 다르게 해서
+        httptClient.fetchAppInfo(appId: appId) { appInfo in
+            self.appInfo = appInfo
+            completion()
+        }
+    }
 }

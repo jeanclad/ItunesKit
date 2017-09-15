@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		21751F071F6B4C6D0029A3E8 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21751F061F6B4C6D0029A3E8 /* DetailViewModel.swift */; };
-		21751F171F6B93170029A3E8 /* AppIdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21751F161F6B93170029A3E8 /* AppIdModel.swift */; };
 		217AFFC11F6A79DB00ED7604 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AFFC01F6A79DB00ED7604 /* DetailViewController.swift */; };
 		219ABE001F6798EB007DBC26 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 219ABDFF1F6798EB007DBC26 /* Podfile */; };
 		21EC47AD1F6677AB007CC79C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EC47AB1F6677AB007CC79C /* ViewController.swift */; };
@@ -37,7 +36,6 @@
 
 /* Begin PBXFileReference section */
 		21751F061F6B4C6D0029A3E8 /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
-		21751F161F6B93170029A3E8 /* AppIdModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIdModel.swift; sourceTree = "<group>"; };
 		217AFFC01F6A79DB00ED7604 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		219ABDFF1F6798EB007DBC26 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		21EC47AB1F6677AB007CC79C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,7 +81,6 @@
 		21EC47A81F6677AB007CC79C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				21751F161F6B93170029A3E8 /* AppIdModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -417,7 +414,6 @@
 				217AFFC11F6A79DB00ED7604 /* DetailViewController.swift in Sources */,
 				21EC47AF1F6677F7007CC79C /* ChartViewModel.swift in Sources */,
 				21F797AC1F666C2100E1785F /* AppDelegate.swift in Sources */,
-				21751F171F6B93170029A3E8 /* AppIdModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,7 +26,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // MARK: UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chartViewModel.numberOfItemInSection
+        return chartViewModel.numberOfItem
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -41,7 +41,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
             let id = chartViewModel.idForItemAtIndexPath(indexPath: indexPath)
-            let appIdModel = AppIdModel(appId: id)
+            let title = chartViewModel.titleForItemAtIndexPath(indexPath: indexPath)
+            controller.detailViewModel.appId = id
+            controller.detailViewModel.appName = title
             navigationController?.pushViewController(controller, animated: true)
         }
     }
