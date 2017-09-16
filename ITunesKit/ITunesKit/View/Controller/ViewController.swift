@@ -21,13 +21,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureTableView()
         chartViewModel.fetchChartList()
         bind()
-    }
-    
-    private func configureTableView() {
-        //        tableView.rx.setDelegate(self).addDisposableTo(disposeBag)
     }
     
     private func bind() {
@@ -40,10 +35,18 @@ class ViewController: UIViewController {
         
         tableView.rx.itemSelected
             .subscribe(onNext: { [weak self] indexPath in
-                let cell = self?.tableView.cellForRow(at: indexPath) as? ChartListTableTableViewCell
-                print("aa")
                 self?.tableView.deselectRow(at: indexPath, animated: true)
             })
             .addDisposableTo(disposeBag)
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailViewController", let destination = segue.destination as? DetailViewController {
+            if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
+                let appId = chartViewModel.chartModel?.feed?.entries?[indexPath.row].appId?.idAttr?.imId
+                destination.detailViewModel.appId = appId
+            }
+        }
     }
 }

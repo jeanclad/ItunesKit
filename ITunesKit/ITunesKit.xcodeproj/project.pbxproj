@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2157A9211F6CECF1008150E6 /* ChartListTableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2157A9201F6CECF1008150E6 /* ChartListTableTableViewCell.swift */; };
+		2157A9231F6D1342008150E6 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2157A9221F6D1342008150E6 /* DetailModel.swift */; };
+		2157A9251F6D1557008150E6 /* DetailTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2157A9241F6D1557008150E6 /* DetailTitleTableViewCell.swift */; };
 		21751F071F6B4C6D0029A3E8 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21751F061F6B4C6D0029A3E8 /* DetailViewModel.swift */; };
 		217AFFC11F6A79DB00ED7604 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AFFC01F6A79DB00ED7604 /* DetailViewController.swift */; };
 		219ABE001F6798EB007DBC26 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 219ABDFF1F6798EB007DBC26 /* Podfile */; };
@@ -19,7 +21,6 @@
 		21F797B61F666C2100E1785F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21F797B41F666C2100E1785F /* LaunchScreen.storyboard */; };
 		21F797C11F666C2200E1785F /* ITunesKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F797C01F666C2200E1785F /* ITunesKitTests.swift */; };
 		21FB90C41F6C05A5002C1A40 /* ChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FB90C31F6C05A5002C1A40 /* ChartModel.swift */; };
-		21FB90C71F6C0A3F002C1A40 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FB90C61F6C0A3F002C1A40 /* HttpClient.swift */; };
 		21FB90C91F6C0A93002C1A40 /* HTTPClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FB90C81F6C0A93002C1A40 /* HTTPClientService.swift */; };
 		378182CB1C9D3CA3FEAC234B /* Pods_ITunesKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBBEF944AEA26DB0F30D30AD /* Pods_ITunesKitTests.framework */; };
 		D9153BCC5C879617CD37D87C /* Pods_ITunesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E962EE229C77D1E5895127B /* Pods_ITunesKit.framework */; };
@@ -37,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		2157A9201F6CECF1008150E6 /* ChartListTableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartListTableTableViewCell.swift; sourceTree = "<group>"; };
+		2157A9221F6D1342008150E6 /* DetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
+		2157A9241F6D1557008150E6 /* DetailTitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTitleTableViewCell.swift; sourceTree = "<group>"; };
 		21751F061F6B4C6D0029A3E8 /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		217AFFC01F6A79DB00ED7604 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		219ABDFF1F6798EB007DBC26 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -52,7 +55,6 @@
 		21F797C01F666C2200E1785F /* ITunesKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesKitTests.swift; sourceTree = "<group>"; };
 		21F797C21F666C2200E1785F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21FB90C31F6C05A5002C1A40 /* ChartModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartModel.swift; sourceTree = "<group>"; };
-		21FB90C61F6C0A3F002C1A40 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		21FB90C81F6C0A93002C1A40 /* HTTPClientService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClientService.swift; sourceTree = "<group>"; };
 		2A2C3AD0CF458A9FAB387356 /* Pods-ITunesKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITunesKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ITunesKit/Pods-ITunesKit.debug.xcconfig"; sourceTree = "<group>"; };
 		5E962EE229C77D1E5895127B /* Pods_ITunesKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ITunesKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				2157A9201F6CECF1008150E6 /* ChartListTableTableViewCell.swift */,
+				2157A9241F6D1557008150E6 /* DetailTitleTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -94,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				21FB90C31F6C05A5002C1A40 /* ChartModel.swift */,
+				2157A9221F6D1342008150E6 /* DetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,7 +178,6 @@
 		21FB90C51F6C0A3F002C1A40 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				21FB90C61F6C0A3F002C1A40 /* HttpClient.swift */,
 				21FB90C81F6C0A93002C1A40 /* HTTPClientService.swift */,
 			);
 			path = Service;
@@ -435,9 +438,10 @@
 				21EC47AD1F6677AB007CC79C /* ViewController.swift in Sources */,
 				21751F071F6B4C6D0029A3E8 /* DetailViewModel.swift in Sources */,
 				21FB90C91F6C0A93002C1A40 /* HTTPClientService.swift in Sources */,
+				2157A9251F6D1557008150E6 /* DetailTitleTableViewCell.swift in Sources */,
 				2157A9211F6CECF1008150E6 /* ChartListTableTableViewCell.swift in Sources */,
-				21FB90C71F6C0A3F002C1A40 /* HttpClient.swift in Sources */,
 				21FB90C41F6C05A5002C1A40 /* ChartModel.swift in Sources */,
+				2157A9231F6D1342008150E6 /* DetailModel.swift in Sources */,
 				217AFFC11F6A79DB00ED7604 /* DetailViewController.swift in Sources */,
 				21EC47AF1F6677F7007CC79C /* ChartViewModel.swift in Sources */,
 				21F797AC1F666C2100E1785F /* AppDelegate.swift in Sources */,

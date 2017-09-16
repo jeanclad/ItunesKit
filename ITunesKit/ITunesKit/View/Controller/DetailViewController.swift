@@ -7,34 +7,47 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import ObjectMapper
 
 class DetailViewController: UIViewController {
-
-    @IBOutlet internal var detailViewModel: DetailViewModel!
+    
+    @IBOutlet var tableView: UITableView!
+    
+    var disposeBag = DisposeBag()
+    var detailViewModel = DetailViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        title = self.detailViewModel.appName
-        self.detailViewModel.fetchAppInfo {
-            // TODO: 상세화면 구현
-        }
-        // Do any additional setup after loading the view.
+        
+        detailViewModel.fetchAppInfo()
+        bind()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    private func bind() {
+        detailViewModel.items
+            .asObservable()
+            .bind(to: tableView.rx.items(cellIdentifier: "titleCell", cellType: DetailTitleTableViewCell.self)) { (_, item, cell) in
+                cell.item = item
+            }
+            .addDisposableTo(disposeBag)
+        
+        tableView.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                self?.tableView.deselectRow(at: indexPath, animated: true)
+            })
+            .addDisposableTo(disposeBag)
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

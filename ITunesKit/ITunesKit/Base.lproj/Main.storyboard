@@ -61,6 +61,7 @@
                                         <connections>
                                             <outlet property="sumnailImageView" destination="Kl0-gl-XQt" id="bas-D1-J6n"/>
                                             <outlet property="titleLabel" destination="8N3-vV-BmJ" id="OOa-5b-aaZ"/>
+                                            <segue destination="NGM-kV-9ks" kind="show" identifier="DetailViewController" id="kCr-Er-VcJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -94,21 +95,49 @@
                     <view key="view" contentMode="scaleToFill" id="BVx-uT-6zC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BQH-ZD-ESF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="titleCell" id="F9d-Xc-l3G" customClass="DetailTitleTableViewCell" customModule="ITunesKit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F9d-Xc-l3G" id="Sda-oi-6vF">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ec-Vn-Skx">
+                                                    <rect key="frame" x="108" y="8" width="127" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="appNameLabel" destination="3Ec-Vn-Skx" id="fVw-A1-7ec"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BQH-ZD-ESF" firstAttribute="leading" secondItem="BVx-uT-6zC" secondAttribute="leading" id="C6J-pT-Q8F"/>
+                            <constraint firstAttribute="trailing" secondItem="BQH-ZD-ESF" secondAttribute="trailing" id="VA9-mR-nYv"/>
+                            <constraint firstItem="BQH-ZD-ESF" firstAttribute="top" secondItem="BVx-uT-6zC" secondAttribute="top" id="VIM-bc-Z1Q"/>
+                            <constraint firstItem="J75-F7-bOT" firstAttribute="top" secondItem="BQH-ZD-ESF" secondAttribute="bottom" id="wlD-NI-kf0"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="detailViewModel" destination="Kcc-QG-ixn" id="BzA-1r-aNe"/>
+                        <outlet property="tableView" destination="BQH-ZD-ESF" id="xCg-wy-8qV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G9m-dI-vL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="Kcc-QG-ixn" customClass="DetailViewModel" customModule="ITunesKit" customModuleProvider="target">
-                    <connections>
-                        <outlet property="httptClient" destination="xeR-Q6-4ZF" id="DZM-wb-snJ"/>
-                    </connections>
-                </customObject>
-                <customObject id="xeR-Q6-4ZF" customClass="HttpClient" customModule="ITunesKit" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="1964" y="858"/>
+            <point key="canvasLocation" x="1964" y="857.72113943028489"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aqb-Hz-87q">

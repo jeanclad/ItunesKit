@@ -7,19 +7,31 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import ObjectMapper
 
 internal class DetailViewModel: NSObject {
-    @IBOutlet var httptClient: HttpClient!
-    var appInfo: NSArray?
+    var disposeBag = DisposeBag()
     
-    var appName: String?
     var appId: String?
     
-    internal func fetchAppInfo(completion: @escaping () -> Void) {
+    var items = Variable<[Result]>([])
+    var detailModel: DetailModel?
+    
+    internal func fetchAppInfo() {
         // TODO: Unit Test appId를 다르게 해서
-        httptClient.fetchAppInfo(appId: appId) { appInfo in
-            self.appInfo = appInfo
-            completion()
-        }
+        HTTPClientService.shared
+            .get(urlString: "https://itunes.apple.com/lookup?id=\(appId ?? "")&country=kr")
+            .observeOn(MainScheduler.instance)
+            .subscribe { (jsonDic) in
+                print(jsonDic)
+                let detailModel = Mapper<DetailModel>().map(JSONObject: jsonDic.element)
+                if detailModel != nil {
+                    self.detailModel = detailModel
+                    self.items.value = (detailModel?.results)!
+                }                
+            }
+            .addDisposableTo(disposeBag)
     }
 }
