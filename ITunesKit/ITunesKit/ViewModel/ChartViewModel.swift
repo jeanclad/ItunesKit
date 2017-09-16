@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 
 class ChartViewModel: NSObject {
+//    var chartModel = Mapper<ChartModel>()
     var chartModel: ChartModel?
     
     

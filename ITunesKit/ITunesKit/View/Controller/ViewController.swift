@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import ObjectMapper
 
 class ViewController: UIViewController {//, UITableViewDataSource, UITableViewDelegate {
     
@@ -39,6 +40,12 @@ class ViewController: UIViewController {//, UITableViewDataSource, UITableViewDe
             .observeOn(MainScheduler.instance)
             .subscribe { (jsonDic) in
                 print(jsonDic)
+                let chartModel = Mapper<ChartModel>().map(JSONObject: jsonDic.element)
+                print(chartModel.debugDescription)
+
+                if chartModel != nil {
+                    self.chartViewModel.chartModel = chartModel
+                }
             }
             .addDisposableTo(disposeBag)
     }

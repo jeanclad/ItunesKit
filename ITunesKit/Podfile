@@ -6,6 +6,7 @@ target 'ITunesKit' do
     use_frameworks!
     pod 'RxSwift'
     pod 'RxCocoa'
+    pod 'ObjectMapper', '~> 2.2'
     pod 'SwiftLint', '~> 0.22'
     
     # Pods for ITunesKit

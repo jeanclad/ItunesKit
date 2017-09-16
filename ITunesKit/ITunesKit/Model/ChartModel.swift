@@ -7,15 +7,64 @@
 //
 
 import Foundation
+import ObjectMapper
 
-class ChartModel {
-    var name: String?
-    var imageUrl: String?
-    var amount: String?
+class ChartModel: Mappable {
+    var feed: Feed?
     
-//    init(name: String, imageUrl: String, amount: String) {
-//        self.name = name
-//        self.imageUrl = imageUrl
-//        self.amount = amount
-//    }
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        feed <- map["feed"]
+    }
 }
+
+class Feed: Mappable {
+    var entries: [Entry]?
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        entries <- map["entry"]
+    }
+}
+
+class Entry: Mappable {
+    var name: Name?
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        name <- map["im:name"]
+    }
+}
+
+class Name: Mappable {
+    var label: String?
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        label <- map["label"]
+    }
+}
+
+//class ChartModel {
+//    var name: String?
+//    var imageUrl: String?
+//    var amount: String?
+//    
+////    init(name: String, imageUrl: String, amount: String) {
+////        self.name = name
+////        self.imageUrl = imageUrl
+////        self.amount = amount
+////    }
+//}

@@ -13,7 +13,6 @@
 		219ABE001F6798EB007DBC26 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 219ABDFF1F6798EB007DBC26 /* Podfile */; };
 		21EC47AD1F6677AB007CC79C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EC47AB1F6677AB007CC79C /* ViewController.swift */; };
 		21EC47AF1F6677F7007CC79C /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EC47AE1F6677F7007CC79C /* ChartViewModel.swift */; };
-		21EC47B01F6677F7007CC79C /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EC47AE1F6677F7007CC79C /* ChartViewModel.swift */; };
 		21F797AC1F666C2100E1785F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F797AB1F666C2100E1785F /* AppDelegate.swift */; };
 		21F797B11F666C2100E1785F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21F797AF1F666C2100E1785F /* Main.storyboard */; };
 		21F797B31F666C2100E1785F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21F797B21F666C2100E1785F /* Assets.xcassets */; };
@@ -346,11 +345,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ITunesKit/Pods-ITunesKit-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
@@ -445,7 +446,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21EC47B01F6677F7007CC79C /* ChartViewModel.swift in Sources */,
 				21F797C11F666C2200E1785F /* ITunesKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

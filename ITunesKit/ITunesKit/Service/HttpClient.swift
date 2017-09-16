@@ -26,7 +26,7 @@ class HttpClient: NSObject {
             .filter { response, _ in
                 return 200..<300 ~= response.statusCode
             }
-            .map { _, data -> NSDictionary in
+            .map {reponse, data -> NSDictionary in
                 guard let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []),
                     let result = jsonObject as? NSDictionary else {
                         return [:]
@@ -40,7 +40,7 @@ class HttpClient: NSObject {
 //                return objects.flatMap(Event.init)
 //            }
             .subscribe(onNext: { [weak self] newEvents in
-                print("aa")
+                print(newEvents)
             })
             .addDisposableTo(bag)
     }
