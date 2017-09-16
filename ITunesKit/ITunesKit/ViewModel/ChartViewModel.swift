@@ -9,31 +9,26 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import ObjectMapper
 
 class ChartViewModel: NSObject {
-//    var chartModel = Mapper<ChartModel>()
+    var disposeBag = DisposeBag()
+    
+    var items = Variable<[Entry]>([])
     var chartModel: ChartModel?
     
-    
-//    @IBOutlet internal var httptClient: HttpClient!
-//    fileprivate var chart: [NSDictionary]?
-//    internal var numberOfItem: Int {
-//        return chart?.count ?? 0
-//    }
-//    
-//    internal func fetchChartList(completion: @escaping () -> Void) {
-////        httptClient.fetchChart { chart in
-////            self.chart = chart
-////            completion()
-////        }
-//        httptClient.fecthHttpResponse(url: "https://itunes.apple.com/kr/rss/topfreeapplications/limit=50/genre=6015/json")
-//    }
-//    
-//    internal func titleForItemAtIndexPath(indexPath: IndexPath) -> String {
-//        return chart?[indexPath.row].value(forKeyPath: "im:name.label") as? String ?? ""
-//    }
-//    
-//    internal func idForItemAtIndexPath(indexPath: IndexPath) -> String {
-//        return chart?[indexPath.row].value(forKeyPath: "id.attributes.im:id") as? String ?? ""
-//    }    
+    internal func fetchChartList() {
+        HTTPClientService.shared
+            .get(urlString: "https://itunes.apple.com/kr/rss/topfreeapplications/limit=50/genre=6015/json")
+            .observeOn(MainScheduler.instance)
+            .subscribe { (jsonDic) in
+                print(jsonDic)
+                let chartModel = Mapper<ChartModel>().map(JSONObject: jsonDic.element)
+                if chartModel != nil {
+                    self.chartModel = chartModel!
+                    self.items.value = (chartModel?.feed?.entries)!
+                }
+            }
+            .addDisposableTo(disposeBag)
+    }
 }

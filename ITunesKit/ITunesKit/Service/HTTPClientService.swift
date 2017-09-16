@@ -34,28 +34,10 @@ class HTTPClientService: HTTPClient {
                     let result = jsonObject as? NSDictionary else {
                         return [:]
                 }
-                let chartModel = Mapper<ChartModel>().map(JSONObject: result)
                 return result
             }
             .filter { objects in
                 return objects.count > 0
         }
-        
-//                let requetURL = URL(string: urlString)// + "?" + params)
-        //        return Observable.create({ (observer) -> Disposable in
-        //            let s = URLSession.shared.dataTask(with: requetURL!) {(data, _, error) in
-        //                if let error = error {
-        //                    observer.onError(error)
-        //                }
-        //
-        //                guard let data = data, let json = try? JSONSerialization.jsonObject(with: data, options: []) else {
-        //                    observer.onError(NSError(domain: "Error", code: -901, userInfo: nil))
-        //                    return
-        //                }
-        //                observer.onNext((json as? NSDictionary)!)
-        //            }
-        //            s.resume()
-        //            return Disposables.create()
-        //        })
     }
 }

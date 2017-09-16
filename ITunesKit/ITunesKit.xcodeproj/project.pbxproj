@@ -578,7 +578,9 @@
 			baseConfigurationReference = 2A2C3AD0CF458A9FAB387356 /* Pods-ITunesKit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ITunesKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.swankystreet.ituneskit.ITunesKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -592,7 +594,9 @@
 			baseConfigurationReference = B4F1E00F050CFDEE2C12153F /* Pods-ITunesKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ITunesKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.swankystreet.ituneskit.ITunesKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
