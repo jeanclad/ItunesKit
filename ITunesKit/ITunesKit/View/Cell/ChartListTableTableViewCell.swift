@@ -20,10 +20,9 @@ class ChartListTableTableViewCell: UITableViewCell {
                 return
             }
             
-            titleLabel.text =  item.imName?.label
+            titleLabel.text = item.imName?.label
             
-            let url = URL(string: (item.imImages?[1].label)!)
-            
+            let url = URL(string: (item.imImages?.last?.label)!)
             if url != nil {
                 sumnailImageView.kf.setImage(with: url)
             }

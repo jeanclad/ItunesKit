@@ -35,6 +35,7 @@ class Feed: Mappable {
 
 class Entry: Mappable {
     var imName: ImImage?
+    var imPrice: ImPrice?
     var imImages: [ImImage]?
     
     required init?(map: Map) {
@@ -44,6 +45,7 @@ class Entry: Mappable {
     func mapping(map: Map) {
         imName <- map["im:name"]
         imImages <- map["im:image"]
+        imPrice <- map["im:price"]
     }
 }
 
@@ -59,6 +61,20 @@ class ImName: Mappable {
     }
 }
 
+class ImPrice: Mappable {
+    var label: String?
+    var priceAttr: PriceAttr?
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        label <- map["label"]
+        priceAttr <- map["attributes"]
+    }
+}
+
 class ImImage: Mappable {
     var label: String?
     
@@ -68,5 +84,19 @@ class ImImage: Mappable {
     
     func mapping(map: Map) {
         label <- map["label"]
+    }
+}
+
+class PriceAttr: Mappable {
+    var amount: String?
+    var currency: String?
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        amount <- map["amount"]
+        currency <- map["currency"]
     }
 }
