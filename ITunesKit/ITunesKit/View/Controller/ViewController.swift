@@ -31,8 +31,10 @@ class ViewController: UIViewController {
     }
     
     private func bind() {
-        self.chartViewModel.items.asObservable().bind(to: self.tableView.rx.items(cellIdentifier: "listCell", cellType: UITableViewCell.self)) { (row, item, cell) in
-            cell.textLabel?.text = item.name?.label
+        self.chartViewModel.items
+            .asObservable()
+            .bind(to: self.tableView.rx.items(cellIdentifier: "listCell", cellType: ChartListTableTableViewCell.self)) { (row, item, cell) in
+                cell.item = item
             }
             .disposed(by: self.disposeBag)
     }

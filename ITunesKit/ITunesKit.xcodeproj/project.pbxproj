@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2157A9211F6CECF1008150E6 /* ChartListTableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2157A9201F6CECF1008150E6 /* ChartListTableTableViewCell.swift */; };
 		21751F071F6B4C6D0029A3E8 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21751F061F6B4C6D0029A3E8 /* DetailViewModel.swift */; };
 		2179EA6A1F6C181400AD2BE5 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2179EA691F6C181400AD2BE5 /* Dictionary.swift */; };
 		217AFFC11F6A79DB00ED7604 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AFFC01F6A79DB00ED7604 /* DetailViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2157A9201F6CECF1008150E6 /* ChartListTableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartListTableTableViewCell.swift; sourceTree = "<group>"; };
 		21751F061F6B4C6D0029A3E8 /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		2179EA691F6C181400AD2BE5 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		217AFFC01F6A79DB00ED7604 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2157A91F1F6CECCE008150E6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2157A9201F6CECF1008150E6 /* ChartListTableTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		2179EA681F6C17F900AD2BE5 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +111,7 @@
 		21EC47A91F6677AB007CC79C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2157A91F1F6CECCE008150E6 /* Cell */,
 				21EC47AA1F6677AB007CC79C /* Controller */,
 			);
 			path = View;
@@ -345,12 +356,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ITunesKit/Pods-ITunesKit-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -433,6 +446,7 @@
 				21EC47AD1F6677AB007CC79C /* ViewController.swift in Sources */,
 				21751F071F6B4C6D0029A3E8 /* DetailViewModel.swift in Sources */,
 				21FB90C91F6C0A93002C1A40 /* HTTPClientService.swift in Sources */,
+				2157A9211F6CECF1008150E6 /* ChartListTableTableViewCell.swift in Sources */,
 				21FB90C71F6C0A3F002C1A40 /* HttpClient.swift in Sources */,
 				21FB90C41F6C05A5002C1A40 /* ChartModel.swift in Sources */,
 				2179EA6A1F6C181400AD2BE5 /* Dictionary.swift in Sources */,

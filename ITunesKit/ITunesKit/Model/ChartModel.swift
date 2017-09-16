@@ -34,18 +34,20 @@ class Feed: Mappable {
 }
 
 class Entry: Mappable {
-    var name: Name?
+    var imName: ImImage?
+    var imImages: [ImImage]?
     
     required init?(map: Map) {
         
     }
     
     func mapping(map: Map) {
-        name <- map["im:name"]
+        imName <- map["im:name"]
+        imImages <- map["im:image"]
     }
 }
 
-class Name: Mappable {
+class ImName: Mappable {
     var label: String?
     
     required init?(map: Map) {
@@ -57,14 +59,14 @@ class Name: Mappable {
     }
 }
 
-//class ChartModel {
-//    var name: String?
-//    var imageUrl: String?
-//    var amount: String?
-//    
-////    init(name: String, imageUrl: String, amount: String) {
-////        self.name = name
-////        self.imageUrl = imageUrl
-////        self.amount = amount
-////    }
-//}
+class ImImage: Mappable {
+    var label: String?
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        label <- map["label"]
+    }
+}

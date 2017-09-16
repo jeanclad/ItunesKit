@@ -19,9 +19,11 @@ class HttpClient: NSObject {
         Observable.from(optional: url)
             .map { (urlString) -> URL in
                 return URL(string: urlString)!
-            }.flatMap { (url) -> Observable<(HTTPURLResponse, Data)> in
+            }
+            .flatMap { (url) -> Observable<(HTTPURLResponse, Data)> in
                 return URLSession.shared.rx.response(request: URLRequest(url: url))
-            }.shareReplay(1)
+            }
+//            .shareReplay(1)
             //                .response
             .filter { response, _ in
                 return 200..<300 ~= response.statusCode
