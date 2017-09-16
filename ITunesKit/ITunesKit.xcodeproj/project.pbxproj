@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2157A9211F6CECF1008150E6 /* ChartListTableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2157A9201F6CECF1008150E6 /* ChartListTableTableViewCell.swift */; };
 		21751F071F6B4C6D0029A3E8 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21751F061F6B4C6D0029A3E8 /* DetailViewModel.swift */; };
-		2179EA6A1F6C181400AD2BE5 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2179EA691F6C181400AD2BE5 /* Dictionary.swift */; };
 		217AFFC11F6A79DB00ED7604 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AFFC01F6A79DB00ED7604 /* DetailViewController.swift */; };
 		219ABE001F6798EB007DBC26 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 219ABDFF1F6798EB007DBC26 /* Podfile */; };
 		21EC47AD1F6677AB007CC79C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EC47AB1F6677AB007CC79C /* ViewController.swift */; };
@@ -39,7 +38,6 @@
 /* Begin PBXFileReference section */
 		2157A9201F6CECF1008150E6 /* ChartListTableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartListTableTableViewCell.swift; sourceTree = "<group>"; };
 		21751F061F6B4C6D0029A3E8 /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
-		2179EA691F6C181400AD2BE5 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		217AFFC01F6A79DB00ED7604 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		219ABDFF1F6798EB007DBC26 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		21EC47AB1F6677AB007CC79C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,14 +88,6 @@
 				2157A9201F6CECF1008150E6 /* ChartListTableTableViewCell.swift */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		2179EA681F6C17F900AD2BE5 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				2179EA691F6C181400AD2BE5 /* Dictionary.swift */,
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		21EC47A81F6677AB007CC79C /* Model */ = {
@@ -163,7 +153,6 @@
 				21EC47A81F6677AB007CC79C /* Model */,
 				21EC47A91F6677AB007CC79C /* View */,
 				21EC47AC1F6677AB007CC79C /* ViewModel */,
-				2179EA681F6C17F900AD2BE5 /* Extension */,
 				21F797AB1F666C2100E1785F /* AppDelegate.swift */,
 				21F797AF1F666C2100E1785F /* Main.storyboard */,
 				21F797B21F666C2100E1785F /* Assets.xcassets */,
@@ -449,7 +438,6 @@
 				2157A9211F6CECF1008150E6 /* ChartListTableTableViewCell.swift in Sources */,
 				21FB90C71F6C0A3F002C1A40 /* HttpClient.swift in Sources */,
 				21FB90C41F6C05A5002C1A40 /* ChartModel.swift in Sources */,
-				2179EA6A1F6C181400AD2BE5 /* Dictionary.swift in Sources */,
 				217AFFC11F6A79DB00ED7604 /* DetailViewController.swift in Sources */,
 				21EC47AF1F6677F7007CC79C /* ChartViewModel.swift in Sources */,
 				21F797AC1F666C2100E1785F /* AppDelegate.swift in Sources */,

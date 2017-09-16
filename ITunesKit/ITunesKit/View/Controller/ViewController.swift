@@ -31,11 +31,19 @@ class ViewController: UIViewController {
     }
     
     private func bind() {
-        self.chartViewModel.items
+        chartViewModel.items
             .asObservable()
-            .bind(to: self.tableView.rx.items(cellIdentifier: "listCell", cellType: ChartListTableTableViewCell.self)) { (row, item, cell) in
+            .bind(to: tableView.rx.items(cellIdentifier: "listCell", cellType: ChartListTableTableViewCell.self)) { (_, item, cell) in
                 cell.item = item
             }
-            .disposed(by: self.disposeBag)
+            .addDisposableTo(disposeBag)
+        
+        tableView.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                let cell = self?.tableView.cellForRow(at: indexPath) as? ChartListTableTableViewCell
+                print("aa")
+                self?.tableView.deselectRow(at: indexPath, animated: true)
+            })
+            .addDisposableTo(disposeBag)
     }
 }
