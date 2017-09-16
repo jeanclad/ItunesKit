@@ -22,7 +22,7 @@ class ChartListTableTableViewCell: UITableViewCell {
             
             titleLabel.text = item.imName?.label
             
-            let url = URL(string: (item.imImages?.last?.label)!)
+            let url = URL(string: (item.imImages?.first?.label)!)
             if url != nil {
                 sumnailImageView.kf.setImage(with: url)
             }

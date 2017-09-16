@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Kingfisher
 
 class DetailTitleTableViewCell: UITableViewCell {
 
+    @IBOutlet var artworkImageView: UIImageView!
     @IBOutlet var appNameLabel: UILabel!
+    @IBOutlet var appDesc: UILabel!
     
     var item: Result? {
         didSet {
@@ -19,11 +22,12 @@ class DetailTitleTableViewCell: UITableViewCell {
             }
             
             appNameLabel.text = item.trackCensoredName
+            appDesc.text = item.description
             
-//            let url = URL(string: (item.imImages?.last?.label)!)
-//            if url != nil {
-//                sumnailImageView.kf.setImage(with: url)
-//            }
+            let url = URL(string: item.artworkUrl100!)
+            if url != nil {
+                artworkImageView.kf.setImage(with: url)
+            }
         }
     }
     

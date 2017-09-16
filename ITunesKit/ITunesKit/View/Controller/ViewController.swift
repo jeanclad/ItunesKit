@@ -21,19 +21,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chartViewModel.fetchChartList()
+        self.chartViewModel.fetchChartList()
         bind()
     }
     
     private func bind() {
-        chartViewModel.items
+        self.chartViewModel.items
             .asObservable()
             .bind(to: tableView.rx.items(cellIdentifier: "listCell", cellType: ChartListTableTableViewCell.self)) { (_, item, cell) in
                 cell.item = item
             }
             .addDisposableTo(disposeBag)
         
-        tableView.rx.itemSelected
+        self.tableView.rx.itemSelected
             .subscribe(onNext: { [weak self] indexPath in
                 self?.tableView.deselectRow(at: indexPath, animated: true)
             })

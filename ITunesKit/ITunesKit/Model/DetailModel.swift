@@ -25,6 +25,8 @@ class DetailModel: Mappable {
 
 class Result: Mappable {
     var trackCensoredName: String?
+    var artworkUrl100: String?
+    var description: String?
     
     required init?(map: Map) {
         
@@ -32,5 +34,7 @@ class Result: Mappable {
     
     func mapping(map: Map) {
         trackCensoredName <- map["trackCensoredName"]
+        artworkUrl100 <- map["artworkUrl100"]
+        description <- map["description"]
     }
 }
