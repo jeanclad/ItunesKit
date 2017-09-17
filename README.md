@@ -14,7 +14,7 @@ open ITunesKit.xcworkspace/
 ## 주요사항
 * MVVM 아케텍쳐로 설계
 * Unit Test 가능하도록 Biz logic은 최대한 VIew-Model에서 처리
-* D.R.Y(Don’t Reply Yourself) 원칙 준수
+* D.R.Y(Don’t Repeat Yourself) 원칙 준수
 * 최대한 코드양을 적게 작성
 * Swiftlint적용하여 Swift API Guideline 준수
 
