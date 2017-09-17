@@ -15,10 +15,10 @@ protocol HTTPClient {
     func get(urlString: String, params: String?) -> Observable<NSDictionary>
 }
 
-class HTTPClientService: HTTPClient {
-    static let shared = HTTPClientService()
+public class HTTPClientService: HTTPClient {
+    public static let shared = HTTPClientService()
     
-    func get (urlString: String, params: String? = nil) -> Observable<NSDictionary> {
+    public func get (urlString: String, params: String? = nil) -> Observable<NSDictionary> {
         return Observable.from(optional: urlString)
             .map { (urlString) -> URL in
                 return URL(string: urlString)!

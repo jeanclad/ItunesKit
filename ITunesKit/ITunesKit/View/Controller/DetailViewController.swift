@@ -15,8 +15,8 @@ class DetailViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
-    var disposeBag = DisposeBag()
-    var detailViewModel = DetailViewModel()
+    fileprivate var disposeBag = DisposeBag()
+    internal var detailViewModel = DetailViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import ObjectMapper
 
-internal class DetailViewModel: NSObject {
+internal final class DetailViewModel: NSObject {
     var disposeBag = DisposeBag()
     
     var appId: String?

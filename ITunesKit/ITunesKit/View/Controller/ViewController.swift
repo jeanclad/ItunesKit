@@ -15,8 +15,8 @@ class ViewController: UIViewController {
     
     @IBOutlet fileprivate var tableView: UITableView!
     
-    var disposeBag = DisposeBag()
-    let chartViewModel = ChartViewModel()
+    fileprivate var disposeBag = DisposeBag()
+    internal let chartViewModel = ChartViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()

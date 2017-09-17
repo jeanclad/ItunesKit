@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class DetailModel: Mappable {
+internal class DetailModel: Mappable {
     var resultCount: Int?
     var results: [Result]?
     
@@ -23,7 +23,7 @@ class DetailModel: Mappable {
     }
 }
 
-class Result: Mappable {
+internal class Result: Mappable {
     var trackCensoredName: String?
     var artworkUrl100: String?
     var description: String?

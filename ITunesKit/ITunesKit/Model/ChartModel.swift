@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class ChartModel: Mappable {
+internal class ChartModel: Mappable {
     var feed: Feed?
     
     required init?(map: Map) {
@@ -21,7 +21,7 @@ class ChartModel: Mappable {
     }
 }
 
-class Feed: Mappable {
+internal class Feed: Mappable {
     var entries: [Entry]?
     
     required init?(map: Map) {
@@ -33,7 +33,7 @@ class Feed: Mappable {
     }
 }
 
-class Entry: Mappable {
+internal class Entry: Mappable {
     var imName: ImImage?
     var imPrice: ImPrice?
     var imImages: [ImImage]?
@@ -51,7 +51,7 @@ class Entry: Mappable {
     }
 }
 
-class ImName: Mappable {
+internal class ImName: Mappable {
     var label: String?
     
     required init?(map: Map) {
@@ -63,7 +63,7 @@ class ImName: Mappable {
     }
 }
 
-class ImPrice: Mappable {
+internal class ImPrice: Mappable {
     var label: String?
     var priceAttr: PriceAttr?
     
@@ -77,7 +77,7 @@ class ImPrice: Mappable {
     }
 }
 
-class ImImage: Mappable {
+internal class ImImage: Mappable {
     var label: String?
     
     required init?(map: Map) {
@@ -89,7 +89,7 @@ class ImImage: Mappable {
     }
 }
 
-class PriceAttr: Mappable {
+internal class PriceAttr: Mappable {
     var amount: String?
     var currency: String?
     
@@ -103,7 +103,7 @@ class PriceAttr: Mappable {
     }
 }
 
-class AppId: Mappable {
+internal class AppId: Mappable {
     var idAttr: IdAttr?
 
     required init?(map: Map) {
@@ -115,7 +115,7 @@ class AppId: Mappable {
     }
 }
 
-class IdAttr: Mappable {
+internal class IdAttr: Mappable {
     var imId: String?
     
     required init?(map: Map) {

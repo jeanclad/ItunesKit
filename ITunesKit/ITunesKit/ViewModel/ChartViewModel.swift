@@ -11,13 +11,13 @@ import RxSwift
 import RxCocoa
 import ObjectMapper
 
-internal class ChartViewModel: NSObject {
+internal final class ChartViewModel: NSObject {
     var disposeBag = DisposeBag()
     
     var items = Variable<[Entry]>([])
     var chartModel: ChartModel?
     
-    func fetchChartList() {
+    internal func fetchChartList() {
         HTTPClientService.shared
             .get(urlString: "https://itunes.apple.com/kr/rss/topfreeapplications/limit=50/genre=6015/json")
             .observeOn(MainScheduler.instance)
