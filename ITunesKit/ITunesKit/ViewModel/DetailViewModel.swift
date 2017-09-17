@@ -20,7 +20,6 @@ internal final class DetailViewModel: NSObject {
     var detailModel: DetailModel?
     
     internal func fetchAppInfo() {
-        // TODO: Unit Test appId를 다르게 해서
         HTTPClientService.shared
             .get(urlString: "https://itunes.apple.com/lookup?id=\(appId ?? "")&country=kr")
             .observeOn(MainScheduler.instance)
