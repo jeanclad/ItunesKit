@@ -13,7 +13,7 @@ import ObjectMapper
 
 class DetailViewController: UIViewController {
     
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet fileprivate var tableView: UITableView!
     
     fileprivate var disposeBag = DisposeBag()
     internal var detailViewModel = DetailViewModel()

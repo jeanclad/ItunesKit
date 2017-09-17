@@ -11,9 +11,9 @@ import Kingfisher
 
 class DetailTitleTableViewCell: UITableViewCell {
 
-    @IBOutlet var artworkImageView: UIImageView!
-    @IBOutlet var appNameLabel: UILabel!
-    @IBOutlet var appDesc: UILabel!
+    @IBOutlet fileprivate var artworkImageView: UIImageView!
+    @IBOutlet fileprivate var appNameLabel: UILabel!
+    @IBOutlet fileprivate var appDesc: UILabel!
     
     var item: Result? {
         didSet {

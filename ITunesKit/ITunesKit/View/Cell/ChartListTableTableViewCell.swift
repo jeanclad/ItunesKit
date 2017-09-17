@@ -11,8 +11,8 @@ import Kingfisher
 
 class ChartListTableTableViewCell: UITableViewCell {
     
-    @IBOutlet var sumnailImageView: UIImageView!
-    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet fileprivate var sumnailImageView: UIImageView!
+    @IBOutlet fileprivate var titleLabel: UILabel!
     
     var item: Entry? {
         didSet {
