@@ -1,1 +1,1 @@
-# ItunesKit
+# ItunesKit - MVVM with RxSwift
