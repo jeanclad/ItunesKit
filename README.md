@@ -1,6 +1,8 @@
 
 # ItunesKit - MVVM with RxSwift
 
+[실행화면](https://www.youtube.com/watch?v=3dYvBVUVeh0&feature=youtu.be)
+
 ## Usage  
 ``` shell
 cd ITunesKit/
@@ -15,3 +17,4 @@ open ITunesKit.xcworkspace/
 * D.R.Y(Don’t Reply Yourself) 원칙 준수
 * 최대한 코드양을 적게 작성
 * Swiftlint적용하여 Swift API Guideline 준수
+
