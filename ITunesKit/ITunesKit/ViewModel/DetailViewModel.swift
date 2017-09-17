@@ -24,7 +24,6 @@ internal final class DetailViewModel: NSObject {
             .get(urlString: "https://itunes.apple.com/lookup?id=\(appId ?? "")&country=kr")
             .observeOn(MainScheduler.instance)
             .subscribe { (jsonDic) in
-                print(jsonDic)
                 let detailModel = Mapper<DetailModel>().map(JSONObject: jsonDic.element)
                 if detailModel != nil {
                     self.detailModel = detailModel

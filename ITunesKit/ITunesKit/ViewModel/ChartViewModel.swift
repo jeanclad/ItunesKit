@@ -22,7 +22,6 @@ internal final class ChartViewModel: NSObject {
             .get(urlString: "https://itunes.apple.com/kr/rss/topfreeapplications/limit=50/genre=6015/json")
             .observeOn(MainScheduler.instance)
             .subscribe { (jsonDic) in
-                print(jsonDic)
                 let chartModel = Mapper<ChartModel>().map(JSONObject: jsonDic.element)
                 if chartModel != nil {
                     self.chartModel = chartModel!
