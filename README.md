@@ -3,7 +3,7 @@
 
 [실행화면](https://www.youtube.com/watch?v=3dYvBVUVeh0&feature=youtu.be)
 
-## Usage  
+## 실행방법
 ``` shell
 cd ITunesKit/
 pod install
